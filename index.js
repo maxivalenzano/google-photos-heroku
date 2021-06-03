@@ -3,13 +3,17 @@ const app = express()
 const { getAlbum } = require('./google-photos')
 const port = process.env.PORT || 8081;
 
-const allowedOrigins = ['http://localhost:3000', 'http://localhost:3001', 'https://xio-y-maxi.netlify.app']
+const allowedOrigins = ['http://localhost:3000', 'http://localhost:3001', 'https://xio-y-maxi.netlify.app', '']
 
 app.use(function (req, res, next) {
   const origin = req.headers.origin
-  console.log("Desde aquí", origin)
+  console.log("Desde aquí", req.headers)
   if (allowedOrigins.includes(origin)) {
     res.setHeader('Access-Control-Allow-Origin', origin)
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
+    next()
+  } else {
+    res.setHeader('Access-Control-Allow-Origin', '*')
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
     next()
   }
