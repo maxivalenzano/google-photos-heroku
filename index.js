@@ -7,7 +7,6 @@ const allowedOrigins = ['http://localhost:3000', 'http://localhost:3001', 'https
 
 app.use(function (req, res, next) {
   const origin = req.headers.origin
-  console.log("Desde aquí", req.headers)
   if (allowedOrigins.includes(origin)) {
     res.setHeader('Access-Control-Allow-Origin', origin)
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
@@ -33,5 +32,5 @@ app.get('/:id', async (req, res) => {
 })
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+  console.log(`Corriendo en el puerto ${port}`)
 })
