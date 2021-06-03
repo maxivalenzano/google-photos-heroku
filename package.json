@@ -4,6 +4,7 @@
   "description": "Obtiene listado de fotos de un album de google photos con su ID publico",
   "main": "index.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
