@@ -11,11 +11,6 @@ app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', origin)
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
     next()
-  } else {
-    return res.status(403).json({
-      status: 403,
-      message: 'This API is only for https://xio-y-maxi.netlify.app',
-    })
   }
 })
 
