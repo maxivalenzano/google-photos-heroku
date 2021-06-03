@@ -8,7 +8,7 @@ app.get('/', (req, res) => {
   res.send('Ta funcionando josha!')
 })
 
-app.get('/:id', async (req, res) => {
+app.get('/id/:id', async (req, res) => {
   try {
     const results = await getAlbum(req.params.id)
     res.json(results)
